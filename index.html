@@ -14,21 +14,23 @@
       <header>Firebase Chat Demo</header>
 
       <div class='example-chat-toolbar'>
-        <label for='nameInput'>Who is your favourite student in IS429:</label>
+        
       </div>
 
       <ul id='example-messages' class='example-chat-messages'>
+      <label for='nameInput'>Who is your favourite student in IS429:</label>
         <li ng-repeat='msg in messages'>
           <strong class='example-chat-username'>{{msg.from}}</strong>
           {{msg.body}}
         </li>
       </ul>
+      
 
       <footer>
         <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>
       </footer>
     </div>
-
+<a href= "http://jimmysoh.github.io/IS429/form.html">Check out my friend, Jimmy!</a>
     <script>
       var myApp = angular.module("myApp", ["firebase"]);
 
@@ -46,7 +48,7 @@
             //LISTEN FOR RETURN KEY
             if (e.keyCode === 13 && $scope.msg) {
               //ALLOW CUSTOM OR ANONYMOUS USER NAMES
-              var name = $scope.name || 'anonymous';
+              var name = $scope.name || 'Answer';
 
               //ADD TO FIREBASE
               $scope.messages.$add({
