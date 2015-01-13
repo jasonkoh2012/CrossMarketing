@@ -1,18 +1,3 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-jasonkoh2012 jasonkoh2012
- 
-1  Unwatch 
-  Star 0
- Fork 0jasonkoh2012/CCWeek2
- branch: gh-pages  CCWeek2/index.html
-jasonkoh2012jasonkoh2012 44 minutes ago Update index.html
-1 contributor
-67 lines (54 sloc)  2.098 kb RawBlameHistory   
 <!doctype html>
 <html ng-app="myApp">
   <head>
@@ -47,23 +32,29 @@ jasonkoh2012jasonkoh2012 44 minutes ago Update index.html
 
     <script>
       var myApp = angular.module("myApp", ["firebase"]);
+
       myApp.controller('MyController', ['$scope', '$firebase',
         function($scope, $firebase) {
           //CREATE A FIREBASE REFERENCE
           var ref = new Firebase("https://kfux1gm2s1s.firebaseio-demo.com/");
+
           // GET MESSAGES AS AN ARRAY
           $scope.messages = $firebase(ref).$asArray();
+
           //ADD MESSAGE METHOD
           $scope.addMessage = function(e) {
+
             //LISTEN FOR RETURN KEY
             if (e.keyCode === 13 && $scope.msg) {
               //ALLOW CUSTOM OR ANONYMOUS USER NAMES
               var name = $scope.name || 'anonymous';
+
               //ADD TO FIREBASE
               $scope.messages.$add({
                 from: name,
                 body: $scope.msg
               });
+
               //RESET MESSAGE
               $scope.msg = "";
             }
@@ -73,5 +64,3 @@ jasonkoh2012jasonkoh2012 44 minutes ago Update index.html
     </script>
   </body>
 </html>
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact
